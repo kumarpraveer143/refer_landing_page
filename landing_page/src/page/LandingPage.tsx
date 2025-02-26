@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { apiUrl } from "../utilities/api.ts";
 
 const LandingPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
@@ -10,6 +12,9 @@ const LandingPage: React.FC = () => {
     friendEmail: "",
     message: "",
   });
+  
+  console.log(apiUrl("/users/refer"));
+
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const validate = () => {
@@ -35,9 +40,15 @@ const LandingPage: React.FC = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (validate()) {
-      console.log("Form Submitted", formData);
+      // console.log("Form Submitted", formData);
+      try {
+        const response = await axios.post(apiUrl("/users/refer"), formData);
+        console.log(response.data);
+      } catch (err) {
+        console.log(err);
+      }
       navigate("/submitted");
       setIsModalOpen(false);
     }
