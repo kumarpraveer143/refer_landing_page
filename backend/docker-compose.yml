@@ -1,0 +1,19 @@
+name: prisma
+
+services:
+  postgres:
+    container_name: prisma-refer
+    image: postgres:16
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: refer
+      POSTGRES_DB: refer
+      POSTGRES_PASSWORD: refer
+
+volumes:
+  postgres_data:
+
+
