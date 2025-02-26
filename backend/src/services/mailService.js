@@ -8,7 +8,7 @@ const sendMail = async (to, referrerName) => {
             <h1 style="color: #1e3a8a; font-size: 24px; font-weight: bold; margin-bottom: 10px;">You've Been Referred!</h1>
             <p style="color: #4b5563; font-size: 16px;"><strong>${referrerName}</strong> has referred you to an exciting opportunity at <strong>Praveer Company</strong>.</p>
             <p style="color: #4b5563; font-size: 16px;">Join our team and take the next step in your career.</p>
-            <a href="https://yourcompany.com/join" style="display: inline-block; background-color: #3b82f6; color: #ffffff; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 15px; font-weight: bold;">Apply Now</a>
+            <a href="https://refer-landing-page-l63t.vercel.app/" style="display: inline-block; background-color: #3b82f6; color: #ffffff; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 15px; font-weight: bold;">Apply Now</a>
             <p style="margin-top: 20px; font-size: 12px; color: #6b7280;">If this wasn’t meant for you, feel free to ignore this email.</p>
         </div>
     </div>

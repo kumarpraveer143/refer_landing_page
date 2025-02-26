@@ -17,9 +17,9 @@ const LandingPage: React.FC = () => {
 
   const validate = () => {
     let newErrors: { [key: string]: string } = {};
-    if (!formData.referredBy.trim()) newErrors.referredBy = "Your name is required";
-    if (!formData.name.trim())
-      newErrors.name = "Friend's name is required";
+    if (!formData.referredBy.trim())
+      newErrors.referredBy = "Your name is required";
+    if (!formData.name.trim()) newErrors.name = "Friend's name is required";
     if (
       !formData.email.trim() ||
       !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
@@ -45,7 +45,7 @@ const LandingPage: React.FC = () => {
         const response = await axios.post(apiUrl("/users/refer"), formData);
         console.log(response.data);
       } catch (err) {
-        console.log(err);
+        console.log("something went wrong while fetching!");
       }
       navigate("/submitted");
       setIsModalOpen(false);
