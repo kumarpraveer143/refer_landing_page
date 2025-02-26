@@ -12,8 +12,6 @@ const LandingPage: React.FC = () => {
     friendEmail: "",
     message: "",
   });
-  
-  console.log(apiUrl("/users/refer"));
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
