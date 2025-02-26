@@ -6,7 +6,7 @@ import router from "./src/referral/referral.route.js";
 const app = express();
 app.use(
   cors({
-    origin: "https://refer-landing-page-l63t.vercel.app",
+    origin: "https://refer-landing-page.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
