@@ -7,9 +7,9 @@ const LandingPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    yourName: "",
-    friendName: "",
-    friendEmail: "",
+    referredBy: "",
+    name: "",
+    email: "",
     message: "",
   });
 
@@ -17,14 +17,14 @@ const LandingPage: React.FC = () => {
 
   const validate = () => {
     let newErrors: { [key: string]: string } = {};
-    if (!formData.yourName.trim()) newErrors.yourName = "Your name is required";
-    if (!formData.friendName.trim())
-      newErrors.friendName = "Friend's name is required";
+    if (!formData.referredBy.trim()) newErrors.referredBy = "Your name is required";
+    if (!formData.name.trim())
+      newErrors.name = "Friend's name is required";
     if (
-      !formData.friendEmail.trim() ||
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.friendEmail)
+      !formData.email.trim() ||
+      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
     ) {
-      newErrors.friendEmail = "Valid email is required";
+      newErrors.email = "Valid email is required";
     }
     if (!formData.message.trim()) newErrors.message = "Message is required";
 
@@ -81,33 +81,33 @@ const LandingPage: React.FC = () => {
               type="text"
               placeholder="Your Name"
               className="w-full p-2 mb-2 border rounded"
-              value={formData.yourName}
+              value={formData.referredBy}
               onChange={handleChange}
             />
-            {errors.yourName && (
-              <p className="text-red-500 text-sm">{errors.yourName}</p>
+            {errors.referredBy && (
+              <p className="text-red-500 text-sm">{errors.referredBy}</p>
             )}
             <input
               name="friendName"
               type="text"
               placeholder="Friend's Name"
               className="w-full p-2 mb-2 border rounded"
-              value={formData.friendName}
+              value={formData.name}
               onChange={handleChange}
             />
-            {errors.friendName && (
-              <p className="text-red-500 text-sm">{errors.friendName}</p>
+            {errors.name && (
+              <p className="text-red-500 text-sm">{errors.name}</p>
             )}
             <input
               name="friendEmail"
               type="email"
               placeholder="Friend's Email"
               className="w-full p-2 mb-2 border rounded"
-              value={formData.friendEmail}
+              value={formData.email}
               onChange={handleChange}
             />
-            {errors.friendEmail && (
-              <p className="text-red-500 text-sm">{errors.friendEmail}</p>
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email}</p>
             )}
             <textarea
               name="message"
