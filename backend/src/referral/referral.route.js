@@ -5,7 +5,8 @@ const router = express.Router();
 
 //post user data route
 const referralController = new ReferralController();
-router.post("/", (req, res) => {
+
+router.post("/refer", (req, res) => {
   referralController.referDetail(req, res);
 });
 
