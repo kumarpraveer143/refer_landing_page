@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import router from "./src/referral/referral.route.js";
 
+const app = express();
 app.use(
   cors({
     origin: "https://refer-landing-page-l63t.vercel.app",
@@ -12,7 +13,6 @@ app.use(
 
 dotenv.config();
 
-const app = express();
 app.use(json());
 
 const port = process.env.PORT;
