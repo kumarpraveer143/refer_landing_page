@@ -77,7 +77,7 @@ const LandingPage: React.FC = () => {
           <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md text-gray-900">
             <h2 className="text-2xl font-bold mb-4">Refer Someone</h2>
             <input
-              name="yourName"
+              name="referredBy"
               type="text"
               placeholder="Your Name"
               className="w-full p-2 mb-2 border rounded"
@@ -88,7 +88,7 @@ const LandingPage: React.FC = () => {
               <p className="text-red-500 text-sm">{errors.referredBy}</p>
             )}
             <input
-              name="friendName"
+              name="name"
               type="text"
               placeholder="Friend's Name"
               className="w-full p-2 mb-2 border rounded"
@@ -99,7 +99,7 @@ const LandingPage: React.FC = () => {
               <p className="text-red-500 text-sm">{errors.name}</p>
             )}
             <input
-              name="friendEmail"
+              name="email"
               type="email"
               placeholder="Friend's Email"
               className="w-full p-2 mb-2 border rounded"
