@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start":"node index.js",
     "go": "nodemon index.js",
     "migrate": "npx prisma migrate dev",
     "studio": "npx prisma studio"
