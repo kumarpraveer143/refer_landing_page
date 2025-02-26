@@ -17,6 +17,10 @@ app.use(json());
 
 const port = process.env.PORT;
 
+app.use("/", (req, res) => {
+  res.send("This is refer landing page route!");
+});
+
 app.use("/users/refer", router);
 
 app.listen(port, () => {
